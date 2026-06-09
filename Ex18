@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18 - Modal</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        button {
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-conteudo {
+            background-color: white;
+            width: 300px;
+            padding: 20px;
+            margin: 15% auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="abrirModal">Exibir Aviso</button>
+
+    <div class="modal" id="modal">
+        <div class="modal-conteudo">
+            <h2>Aviso</h2>
+            <p>Esta é uma mensagem de aviso.</p>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("modal");
+        const abrir = document.getElementById("abrirModal");
+
+        abrir.addEventListener("click", function () {
+            modal.style.display = "block";
+        });
+
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
