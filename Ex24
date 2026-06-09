@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 24 - Clip Path</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        button {
+            padding: 15px 40px;
+            border: none;
+            color: white;
+            background: #333;
+            cursor: pointer;
+            margin: 15px;
+            font-size: 16px;
+        }
+
+        .hexagono {
+            clip-path: polygon(
+                25% 0%,
+                75% 0%,
+                100% 50%,
+                75% 100%,
+                25% 100%,
+                0% 50%
+            );
+        }
+
+        .seta {
+            clip-path: polygon(
+                0% 0%,
+                75% 0%,
+                75% 20%,
+                100% 50%,
+                75% 80%,
+                75% 100%,
+                0% 100%
+            );
+        }
+    </style>
+</head>
+<body>
+
+    <button class="hexagono">Hexágono</button>
+
+    <button class="seta">Seta</button>
+
+</body>
+</html>
