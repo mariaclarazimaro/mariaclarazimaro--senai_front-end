@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 21 - CSS Grid</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "aside main"
+                "footer footer";
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        header {
+            grid-area: header;
+            background: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        aside {
+            grid-area: aside;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        main {
+            grid-area: main;
+            padding: 20px;
+        }
+
+        footer {
+            grid-area: footer;
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-areas:
+                    "header"
+                    "aside"
+                    "main"
+                    "footer";
+
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <header>Header</header>
+
+        <aside>
+            <h3>Menu</h3>
+            <ul>
+                <li>Início</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+            </ul>
+        </aside>
+
+        <main>
+            <h1>Conteúdo Principal</h1>
+            <p>Layout desenvolvido apenas com CSS Grid.</p>
+        </main>
+
+        <footer>Rodapé</footer>
+    </div>
+
+</body>
+</html>
