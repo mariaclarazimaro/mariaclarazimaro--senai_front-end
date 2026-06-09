@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11 - Layout Responsivo</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            min-height: calc(100vh - 140px);
+        }
+
+        aside {
+            width: 250px;
+            background-color: #e4e4e4;
+            padding: 20px;
+        }
+
+        main {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Tablets */
+        @media (max-width: 768px) {
+            aside {
+                width: 200px;
+            }
+
+            header,
+            main,
+            aside,
+            footer {
+                padding: 15px;
+            }
+        }
+
+        /* Celulares */
+        @media (max-width: 480px) {
+            .container {
+                flex-direction: column;
+            }
+
+            aside {
+                width: 100%;
+            }
+
+            header {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meu Site Responsivo</h1>
+    </header>
+
+    <div class="container">
+
+        <aside>
+            <h2>Menu</h2>
+            <ul>
+                <li>Início</li>
+                <li>Sobre</li>
+                <li>Serviços</li>
+                <li>Contato</li>
+            </ul>
+        </aside>
+
+        <main>
+            <h2>Conteúdo Principal</h2>
+
+            <p>
+                Este layout utiliza Media Queries para adaptar sua estrutura
+                conforme o tamanho da tela do dispositivo.
+            </p>
+
+            <p>
+                Em computadores, o menu fica ao lado do conteúdo. Em celulares,
+                os elementos são reorganizados verticalmente para melhorar a
+                experiência do usuário.
+            </p>
+        </main>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Desenvolvido por Maria Clara.</p>
+    </footer>
+
+</body>
+</html>
