@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Meta Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exercício 14 - Meta Viewport</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .caixa {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Teste da Meta Viewport</h1>
+    </header>
+
+    <main>
+        <div class="caixa">
+            <h2>O que é a Meta Viewport?</h2>
+
+            <p>
+                A meta viewport informa ao navegador como a página deve ser
+                dimensionada em diferentes dispositivos, especialmente em
+                smartphones e tablets.
+            </p>
+
+            <p>
+                Com ela, o conteúdo se ajusta corretamente à largura da tela do
+                dispositivo.
+            </p>
+        </div>
+    </main>
+
+</body>
+</html>
