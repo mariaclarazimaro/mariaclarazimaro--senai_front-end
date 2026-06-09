@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20 - Tabs</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        .tab-btn.ativa {
+            background-color: #555;
+        }
+
+        .conteudo {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .conteudo.ativo {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sistema de Abas</h1>
+
+    <div class="tabs">
+        <button class="tab-btn ativa" data-tab="tab1">Aba 1</button>
+        <button class="tab-btn" data-tab="tab2">Aba 2</button>
+        <button class="tab-btn" data-tab="tab3">Aba 3</button>
+    </div>
+
+    <div id="tab1" class="conteudo ativo">
+        <h2>Conteúdo 1</h2>
+        <p>Informações da primeira aba.</p>
+    </div>
+
+    <div id="tab2" class="conteudo">
+        <h2>Conteúdo 2</h2>
+        <p>Informações da segunda aba.</p>
+    </div>
+
+    <div id="tab3" class="conteudo">
+        <h2>Conteúdo 3</h2>
+        <p>Informações da terceira aba.</p>
+    </div>
+
+    <script>
+        const botoes = document.querySelectorAll(".tab-btn");
+        const conteudos = document.querySelectorAll(".conteudo");
+
+        botoes.forEach(function (botao) {
+            botao.addEventListener("click", function () {
+
+                botoes.forEach(function (b) {
+                    b.classList.remove("ativa");
+                });
+
+                conteudos.forEach(function (conteudo) {
+                    conteudo.classList.remove("ativo");
+                });
+
+                botao.classList.add("ativa");
+
+                const id = botao.dataset.tab;
+                document.getElementById(id).classList.add("ativo");
+            });
+        });
+    </script>
+
+</body>
+</html>
