@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - Figure e Figcaption</title>
+</head>
+<body>
+
+    <header>
+        <h1>Portfólio de Exercícios Front-end</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Imagem com legenda</h2>
+
+            <figure>
+                <img src="https://via.placeholder.com/400x250"
+                     alt="Imagem ilustrativa de exemplo">
+                
+                <figcaption>
+                    Figura 1 – Imagem ilustrativa utilizada como exemplo.
+                </figcaption>
+            </figure>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desenvolvido por Maria Clara.</p>
+    </footer>
+
+</body>
+</html>
