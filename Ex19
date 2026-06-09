@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19 - Galeria</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .galeria img {
+            width: 250px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .galeria img.ampliada {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Galeria de Imagens</h1>
+
+    <div class="galeria">
+        <img src="https://via.placeholder.com/250?text=Imagem+1" alt="Imagem 1">
+        <img src="https://via.placeholder.com/250?text=Imagem+2" alt="Imagem 2">
+        <img src="https://via.placeholder.com/250?text=Imagem+3" alt="Imagem 3">
+    </div>
+
+    <script>
+        const imagens = document.querySelectorAll(".galeria img");
+
+        imagens.forEach(function (imagem) {
+            imagem.addEventListener("click", function () {
+                imagem.classList.toggle("ampliada");
+            });
+        });
+    </script>
+
+</body>
+</html>
