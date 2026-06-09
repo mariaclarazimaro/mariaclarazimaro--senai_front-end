@@ -1,0 +1,37 @@
+import React from "react";
+import { Button, Modal, Box, Typography } from "@mui/material";
+
+export default function MeuModal() {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+        <>
+            <Button variant="contained" onClick={() => setOpen(true)}>
+                Abrir Modal
+            </Button>
+
+            <Modal open={open} onClose={() => setOpen(false)}>
+                <Box
+                    sx={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        width: 400,
+                        bgcolor: "background.paper",
+                        p: 4,
+                        borderRadius: 2,
+                    }}
+                >
+                    <Typography variant="h6">
+                        Modal MUI
+                    </Typography>
+
+                    <Typography sx={{ mt: 2 }}>
+                        Este é um exemplo de modal utilizando Material UI.
+                    </Typography>
+                </Box>
+            </Modal>
+        </>
+    );
+}
