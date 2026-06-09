@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15 - Carrossel Responsivo</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 2rem;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .carrossel {
+            max-width: 50rem;
+            margin: 2rem auto;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+        }
+
+        /* Oculta os radios */
+        .carrossel input[type="radio"] {
+            display: none;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Navegação */
+        .navegacao {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem;
+        }
+
+        .navegacao label {
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 50%;
+            background-color: #999;
+            cursor: pointer;
+        }
+
+        /* Movimentação dos slides */
+        #slide1:checked ~ .slides {
+            transform: translateX(0%);
+        }
+
+        #slide2:checked ~ .slides {
+            transform: translateX(-100%);
+        }
+
+        #slide3:checked ~ .slides {
+            transform: translateX(-200%);
+        }
+
+        /* Indicador ativo */
+        #slide1:checked ~ .navegacao label[for="slide1"],
+        #slide2:checked ~ .navegacao label[for="slide2"],
+        #slide3:checked ~ .navegacao label[for="slide3"] {
+            background-color: #333;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .navegacao label {
+                width: 0.75rem;
+                height: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Carrossel de Imagens Responsivo</h1>
+
+    <div class="carrossel">
+
+        <!-- Controles -->
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+
+        <!-- Slides -->
+        <div class="slides">
+
+            <div class="slide">
+                <img
+                    src="https://via.placeholder.com/800x400?text=Imagem+1"
+                    alt="Imagem 1 do carrossel">
+            </div>
+
+            <div class="slide">
+                <img
+                    src="https://via.placeholder.com/800x400?text=Imagem+2"
+                    alt="Imagem 2 do carrossel">
+            </div>
+
+            <div class="slide">
+                <img
+                    src="https://via.placeholder.com/800x400?text=Imagem+3"
+                    alt="Imagem 3 do carrossel">
+            </div>
+
+        </div>
+
+        <!-- Indicadores -->
+        <div class="navegacao">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+        </div>
+
+    </div>
+
+</body>
+</html>
