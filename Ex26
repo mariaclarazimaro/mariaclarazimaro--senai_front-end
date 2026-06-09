@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Bootstrap</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="bg-primary text-white text-center p-4">
+        <h1>Meu Site</h1>
+    </header>
+
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 bg-light p-4">
+                <h2>Conteúdo Principal</h2>
+                <p>Área destinada ao conteúdo do site.</p>
+            </div>
+
+            <div class="col-md-4 bg-secondary text-white p-4">
+                <h2>Barra Lateral</h2>
+                <p>Informações complementares.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        © 2026 - Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>
