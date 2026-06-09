@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12 - Menu Hamburguer</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Botão hamburguer */
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Telas menores */
+        @media (max-width: 768px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #333;
+                margin-top: 15px;
+            }
+
+            .menu li {
+                text-align: center;
+            }
+
+            .menu a {
+                display: block;
+                padding: 15px;
+            }
+
+            /* Exibe o menu quando o checkbox estiver marcado */
+            #menu-checkbox:checked ~ .menu {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="menu-container">
+
+            <div class="logo">Meu Site</div>
+
+            <!-- Checkbox oculto -->
+            <input type="checkbox" id="menu-checkbox" hidden>
+
+            <!-- Ícone do menu hamburguer -->
+            <label for="menu-checkbox" class="menu-toggle">
+                ☰
+            </label>
+
+            <!-- Menu -->
+            <ul class="menu">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <main style="padding: 20px;">
+        <h1>Menu Responsivo</h1>
+
+        <p>
+            Redimensione a janela do navegador para visualizar o menu
+            se transformando em um menu hamburguer em telas menores.
+        </p>
+    </main>
+
+</body>
+</html>
