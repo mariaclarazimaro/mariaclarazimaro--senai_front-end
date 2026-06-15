@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 31 - Consumo de API com Fetch</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        #resultado {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>Buscar Post da API</h1>
+
+        <button id="buscar">
+            Buscar Dados
+        </button>
+
+        <div id="resultado"></div>
+
+    </div>
+
+    <script>
+        const botao = document.getElementById("buscar");
+        const resultado = document.getElementById("resultado");
+
+        botao.addEventListener("click", () => {
+
+            fetch("https://jsonplaceholder.typicode.com/posts/1")
+                .then(resposta => resposta.json())
+                .then(dados => {
+
+                    resultado.innerHTML = `
+                        <h2>${dados.title}</h2>
+                        <p>${dados.body}</p>
+                    `;
+                })
+                .catch(() => {
+
+                    resultado.innerHTML =
+                        "<p>Erro ao carregar os dados.</p>";
+                });
+
+        });
+    </script>
+
+</body>
+</html>
