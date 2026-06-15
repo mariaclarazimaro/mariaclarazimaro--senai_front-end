@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 36 - UI/UX</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .card {
+            background: #fafafa;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #333;
+            border-radius: 5px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .ui {
+            background: #dbeafe;
+        }
+
+        .ux {
+            background: #dcfce7;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Análise UI/UX</h1>
+
+    <h2>Site: Netflix</h2>
+
+    <div class="card">
+        <h3>UI (Interface)</h3>
+        <span class="tag ui">Visual</span>
+        <p>Design escuro, consistente e moderno.</p>
+        <p>Tipografia grande e fácil leitura.</p>
+        <p>Imagens de capas bem destacadas.</p>
+    </div>
+
+    <div class="card">
+        <h3>UX (Experiência)</h3>
+        <span class="tag ux">Experiência</span>
+        <p>Navegação simples e intuitiva.</p>
+        <p>Recomendações personalizadas.</p>
+        <p>Continuação automática de séries.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
