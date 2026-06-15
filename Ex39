@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 39 - Cadastro Mobile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .progress {
+            height: 8px;
+            background: #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            width: 25%;
+            background: #333;
+            transition: 0.3s;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px;
+            border: none;
+            background: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        .etapa {
+            display: none;
+        }
+
+        .ativo {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Cadastro Mobile</h2>
+
+    <div class="progress">
+        <div class="bar" id="bar"></div>
+    </div>
+
+    <!-- ETAPA 1 -->
+    <div class="etapa ativo">
+        <h3>Nome</h3>
+        <input placeholder="Digite seu nome">
+        <button onclick="proxima()">Próximo</button>
+    </div>
+
+    <!-- ETAPA 2 -->
+    <div class="etapa">
+        <h3>E-mail</h3>
+        <input placeholder="Digite seu e-mail">
+        <button onclick="proxima()">Próximo</button>
+    </div>
+
+    <!-- ETAPA 3 -->
+    <div class="etapa">
+        <h3>Senha</h3>
+        <input type="password" placeholder="Digite sua senha">
+        <button onclick="finalizar()">Finalizar</button>
+    </div>
+
+</div>
+
+<script>
+    let etapa = 0;
+    const etapas = document.querySelectorAll(".etapa");
+    const bar = document.getElementById("bar");
+
+    function mostrarEtapa() {
+        etapas.forEach((e, i) => {
+            e.classList.toggle("ativo", i === etapa);
+        });
+
+        bar.style.width = ((etapa + 1) / etapas.length) * 100 + "%";
+    }
+
+    function proxima() {
+        if (etapa < etapas.length - 1) {
+            etapa++;
+            mostrarEtapa();
+        }
+    }
+
+    function finalizar() {
+        alert("Cadastro finalizado com sucesso!");
+    }
+</script>
+
+</body>
+</html>
