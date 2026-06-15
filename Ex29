@@ -1,0 +1,48 @@
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+
+function App() {
+    return {
+        <>
+            <AppBar position="fixed">
+                <Toolbar>
+                    <Typography
+                        variant="h6"
+                        sx={{ flexGrow: 1 }}
+                    >
+                        Meu Portfólio
+                    </Typography>
+
+                    <Button color="inherit">
+                        Início
+                    </Button>
+
+                    <Button color="inherit">
+                        Projetos
+                    </Button>
+
+                    <Button color="inherit">
+                        Contato
+                    </Button>
+                </Toolbar>
+            </AppBar>
+
+            <main
+                style={
+                    marginTop: "90px",
+                    padding: "20px"
+                }}
+            >
+                <h1>Barra fixa com Material-UI</h1>
+
+                <p>
+                    Este conteúdo permanece abaixo da navbar.
+                </p>
+            </main>
+        </>
+    );
+}
+
+export default App;
