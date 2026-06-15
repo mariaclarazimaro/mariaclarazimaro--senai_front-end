@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 40 - Formulário Acessível</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+        }
+
+        .ajuda {
+            font-size: 14px;
+            color: #555;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+
+        <h1>Formulário Acessível</h1>
+
+        <label for="nome">
+            Nome
+        </label>
+
+        <input
+            type="text"
+            id="nome"
+            aria-required="true"
+            required
+        >
+
+        <label for="email">
+            E-mail
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            aria-describedby="ajuda-email"
+            required
+        >
+
+        <small
+            id="ajuda-email"
+            class="ajuda"
+        >
+            Informe um e-mail válido.
+        </small>
+
+        <label for="telefone">
+            Telefone
+        </label>
+
+        <input
+            type="tel"
+            id="telefone"
+            aria-label="Telefone para contato"
+        >
+
+        <button type="submit">
+            Enviar
+        </button>
+
+    </form>
+
+</body>
+</html>
